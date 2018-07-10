@@ -48,7 +48,7 @@ class Stimulus():
     def silence(self):
         """Generate silence (zeroes)"""
 
-        return np.zeros(self.num_samples)
+        self.data = np.zeros(self.num_samples)
 
     def taper(self,start_pct,end_pct):
         """
