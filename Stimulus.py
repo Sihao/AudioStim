@@ -21,9 +21,6 @@ class Stimulus():
         # Array of time points
         self.time_points = np.linspace(0, self.length, self.num_samples)
 
-        # Option to append generated stimulus data sequentially
-        self.append = False
-
         # Actual stimulus data
         self.data = []
 
