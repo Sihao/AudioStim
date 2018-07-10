@@ -113,4 +113,4 @@ class Stimulus():
     def _calc_num_samples(self):
         """Calculate number of samples needed to have stim of specified length at specified sampling frequency"""
 
-        return self.length * self.fs
+        return np.int32(np.floor(self.length * self.fs))
