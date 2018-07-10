@@ -32,7 +32,7 @@ class Stimulus():
     def noise(self):
         """Generate white noise"""
 
-        self.data = np.random.random(size = self.num_samples)
+        self.data = 255* np.random.random(size = self.num_samples)
 
     def chirp(self, f0, f1, method = 'linear'):
         """
