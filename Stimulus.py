@@ -89,6 +89,26 @@ class Stimulus():
 
         io.write(filename, self.fs, self.data)
 
+    def __add__(self, other):
+        assert self.fs == other.fs, "Sampling frequencies must be equal"
+
+        result_length = self.length + other.length
+        result = Stimulus(result_length, self.fs)
+        result.data = np.append(self.data, other.data)
+
+        return(result)
+
+    def __rmul__(self, other):
+        assert isinstance(other, int), "Multiplication is only possible with scalars"
+
+        result_length = other * self.length
+
+        result = Stimulus(result_length, self.fs)
+
+        for i in range(other):
+            result.data = np.append(result.data, self.data)
+
+        return result
 
     def _calc_num_samples(self):
         """Calculate number of samples needed to have stim of specified length at specified sampling frequency"""
