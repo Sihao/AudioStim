@@ -84,10 +84,18 @@ class Stimulus():
         plt.xlabel('Time [sec]')
         fig.show()
 
-    def save_wav(self, filename):
-        """Saves the stimulus stored in self.data into a .wav file"""
+    def save_wav(self, filename, bitdepth='16'):
+        """Saves the stimulus stored in self.data into a .wav file
 
-        io.write(filename, self.fs, self.data)
+           filename: path to save wav file to
+           bitdepth: either '16' or '32', sets the bit depth of the output wavfile
+
+        """
+        if bitdepth is '16':
+            io.write(filename, self.fs, np.int16(self.data))
+
+        else:
+            io.write(filename, self.fs, self.data)
 
     def __add__(self, other):
         assert self.fs == other.fs, "Sampling frequencies must be equal"
