@@ -84,14 +84,14 @@ class Stimulus():
         plt.xlabel('Time [sec]')
         fig.show()
 
-    def save_wav(self, filename, bitdepth='16'):
+    def save_wav(self, filename, bit_depth='16'):
         """Saves the stimulus stored in self.data into a .wav file
 
            filename: path to save wav file to
-           bitdepth: either '16' or '32', sets the bit depth of the output wavfile
+           bit_depth: either '16' or '32', sets the bit depth of the output wavfile
 
         """
-        if bitdepth is '16':
+        if bit_depth is '16':
             io.write(filename, self.fs, np.int16(self.data))
 
         else:
