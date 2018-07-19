@@ -91,9 +91,13 @@ class Stimulus():
 
         """
         if bit_depth is '16':
-            io.write(filename, self.fs, np.int16(self.data))
+            max = np.iinfo(np.int16).max
+
+            io.write(filename, self.fs, (self.data*max).astype(np.int16))
         elif bit_depth is '32':
-            io.write(filename, self.fs, np.int32(self.data))
+            max = np.iinfo(np.int32).max
+
+            io.write(filename, self.fs, (self.data*max).astype(np.int32))
         else:
             io.write(filename, self.fs, self.data)
 
