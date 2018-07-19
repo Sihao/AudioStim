@@ -93,7 +93,8 @@ class Stimulus():
         """
         if bit_depth is '16':
             io.write(filename, self.fs, np.int16(self.data))
-
+        elif bit_depth is '32':
+            io.write(filename, self.fs, np.int32(self.data))
         else:
             io.write(filename, self.fs, self.data)
 
