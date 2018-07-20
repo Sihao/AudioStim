@@ -88,6 +88,18 @@ A stimulus can be repeated with the `*` operator:
 repeated_stim = 3 * stim
 ```
 
+## Visualising the stimulus
+You can plot the waveform and the spectrogram of the stimulus using the `plot_waveform()`
+and `plot_spectrogram()` methods respectively:
+
+```python
+repeated_stim.plot_waveform()
+repeated_stim.plot_spectrogram()
+```
+
+![](Images/stimulus_waveform.png)
+![](Images/stimulus_spectrogram.png)
+
 ## Saving the stimulus
 Stimuli can be saved into `wav` files using the `save_wav()` method:
 
