@@ -1,5 +1,5 @@
-# PyAudioStim
-Simple class to generate artificial auditory stimuli such as pure tones, chirps and noise.
+# AudioStim
+Simple Python class to generate artificial auditory stimuli such as pure tones, chirps and noise.
 
 ## Requirements
 The dependencies are:
