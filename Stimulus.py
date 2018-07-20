@@ -64,7 +64,7 @@ class Stimulus():
         assert end_pct < 1 and end_pct > 0, "end_pct must be between 0 and 1"
         assert start_pct+end_pct < 1, "Sum of start_pct and end_pct can not exceed 1"
 
-    def plot_stimulus_waveform(self):
+    def plot_waveform(self):
         """Plot the waveform of the generated stimulus"""
 
         fig = plt.figure()
@@ -75,7 +75,7 @@ class Stimulus():
 
         fig.show()
 
-    def plot_stimulus_spectrogram(self):
+    def plot_spectrogram(self):
         """Plot the spectrogram of the generated stimulus"""
 
         f, t, Sxx = sig.spectrogram(self.data, self.fs)
