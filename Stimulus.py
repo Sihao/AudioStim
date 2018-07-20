@@ -29,6 +29,9 @@ class Stimulus():
     def pure_tone(self, f):
         """Generate pure tone at specified frequency of length specified in object (at specified sampling frequency)"""
 
+        t = np.arange(self.num_samples)
+        self.data = np.sin(2 * np.pi * f * t / self.fs)
+
     def noise(self):
         """Generate white noise"""
         self.data = 2 * np.random.random(size = self.num_samples) - 1
